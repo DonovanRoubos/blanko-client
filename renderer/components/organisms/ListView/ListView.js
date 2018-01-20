@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-//
+//Atoms
 import Checkbox from '../../atoms/form/Checkbox';
 
 // Style import
