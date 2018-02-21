@@ -27,20 +27,24 @@ class TaskDetail extends React.Component {
 									check={selectedTask.status === 'todo' ? false : true}
 									onClick={e => updateTaskStatus(e, 0, selectedTask._id, selectedTask)}
 								/>
-									<h1 className="main-title">{ selectedTask.title }</h1>
-									{ selectedTask.subTitle &&
-										<p className="description">{ selectedTask.subTitle }</p>
-									}
-									<div className="dates">
-										<div className="date-item">
-											<label>Task due date</label>
-											<span className="date">21-08-2012</span>
-										</div>
-										<div className="date-item">
-											<label>Task status</label>
-											<span className="date">21-08-2012</span>
-										</div>
+								<h1 className="main-title">{ selectedTask.title }</h1>
+								{ selectedTask.subTitle &&
+									<p className="description">{ selectedTask.subTitle }</p>
+								}
+								<div className="dates">
+									<div className="date-item">
+										<label>Task due date</label>
+										<span className="date">21-08-2012</span>
 									</div>
+									<div className="date-item">
+										<label>Task status</label>
+										<span className="date">21-08-2012</span>
+									</div>
+								</div>
+								<div className="controllers">
+									<Button text="edit" onClick={() => {console.log('edit task')}} />
+									<Button text="delete" type="delete" onClick={() => {console.log('delete task')}} />
+								</div>
 							</div>
 						}
 					</div>

@@ -100,4 +100,11 @@ export default `
 	color: #424459;
 	letter-spacing: 0.7px;
 }
+
+.controllers {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 16px;
+}
 `
