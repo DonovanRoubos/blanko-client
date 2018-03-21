@@ -2,6 +2,9 @@ import React from 'react'
 import styles from './projectListStyle'
 import get from '../../../utils/get'
 
+// Components
+import ProjectListItem from '../../molecules/ProjectListItem'
+
 const listStyle = {
 	lineHeight: 2.6
 }
@@ -12,7 +15,7 @@ class ProjectList extends React.Component {
 	}
 
 	render() {
-		const { projects, activeProjectId, selectedProjectId, favorite } = this.props
+		const { projects, activeProjectId, selectedProjectId, setProjectFavorite, favorite, selectProject } = this.props
 
 		return(
 			<div className={this.props.className}>
@@ -29,12 +32,12 @@ class ProjectList extends React.Component {
 						projects.filter(project => project !== null && project.favorite === favorite).map((project, i) => {
 
 							return(
-								<li key={i} className={selectedProjectId === project._id ? 'active' : ''}
-									onClick={e => this.props.selectProject(project._id)}>
-									<span title={project.projectTitle}>{ project.projectTitle }</span>
-									<span className="set-favorite" onClick={ e => this.props.setProjectFavorite(e, project._id, !project.favorite)}>
-										⭐
-									</span>
+								<li key={i}>
+									<ProjectListItem
+										project={project}
+										selectProject={selectProject}
+										selectedProjectId={selectedProjectId}
+									/>
 								</li>
 							)
 
