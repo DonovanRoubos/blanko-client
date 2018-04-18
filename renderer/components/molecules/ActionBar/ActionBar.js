@@ -12,8 +12,13 @@ class ActionBar extends Component {
 		this.toggleMenuVisibility = this.toggleMenuVisibility.bind(this)
 	}
 
+	componentWillReceiveProps(nextProps) {
+		if(!nextProps.iconVisibility) {
+			this.setState({menuVisibility: false})
+		}
+	}
+
 	toggleMenuVisibility() {
-		console.log('CKICK!')
 		this.setState(prevState => ({ menuVisibility: !prevState.menuVisibility }))
 	}
 
@@ -32,8 +37,8 @@ class ActionBar extends Component {
 					menuVisibility &&
 					<div className="action-bar-menu">
 						<ul>
-							<li>Set favorite</li>
-							<li>Delete project</li>
+							<li>Favorite</li>
+							<li>Delete</li>
 						</ul>
 					</div>
 				}

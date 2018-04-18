@@ -33,7 +33,7 @@ class ActiveProject extends React.Component {
 
 	render() {
 		const { activeProject, tasks, updateTaskStatus, updateTaskTitles, deleteTask, addNewTask, filteredValue, setFilteredValue } = this.props
-		const { projectTitle, projectDescription } = activeProject
+		const { projectTitle, projectDescription } = this.state
 
 		return(<div className="active-project" onKeyUp={this.onKeyUp}>
 			<h1 className="mainTitle" ref="activeProjectTitle">{ projectTitle }</h1>

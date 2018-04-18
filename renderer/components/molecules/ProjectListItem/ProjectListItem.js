@@ -16,7 +16,7 @@ class ProjectListItem extends Component {
 	}
 
 	selectProjectCheck(e) {
-		if(e.target.classList[0] !== 'action-bar') {
+		if(e.target.classList[0] !== 'action-bar-icon') {
 			this.props.selectProject(this.props.project._id)
 		}
 	}

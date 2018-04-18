@@ -27,7 +27,7 @@ export default `
 		padding: 12px;
 		z-index: 1;
 		top: 16px;
-		right: -50px;
+		right: calc(-50% + 6px);
 		position: relative;
 	}
 
@@ -44,5 +44,14 @@ export default `
 		text-transform: uppercase;
 		font-size: 10px;
 		font-weight: 500;
+		color: #9B9B9B;
+	}
+
+	.action-bar-menu ul li:first-child:hover {
+		color: #1C87FB;
+	}
+
+	.action-bar-menu ul li:last-child:hover {
+		color: #FB1C1C;
 	}
 `
