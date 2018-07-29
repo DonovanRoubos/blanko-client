@@ -5,6 +5,7 @@ export default `
 		font-size: 12px;
 		color: black;
 		top: 0;
+    outline: none;
 	}
 
 	.action-bar-icon {

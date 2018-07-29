@@ -18,12 +18,11 @@ export default `
 		white-space: pre;
 	}
 
-<<<<<<< HEAD
 	.projects-list li span {
 		padding-right: 32px;
-=======
+  }
+
 	.projects-list li.active {
-		/* font-weight: bold; */
 		color: #1C87FB;
 	}
 
@@ -55,7 +54,6 @@ export default `
 
 	.projects-list li:hover .set-favorite {
 		opacity: 1;
->>>>>>> master
 	}
 
 	.label {

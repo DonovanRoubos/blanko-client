@@ -4,6 +4,7 @@ import get from '../../../utils/get'
 
 // Components
 import ProjectListItem from '../../molecules/ProjectListItem'
+import ActionBar from '../../molecules/ActionBar'
 
 const listStyle = {
 	lineHeight: 2.6
@@ -34,13 +35,17 @@ class ProjectList extends React.Component {
 
 								return(
 									<li key={i} className={selectedProjectId === project._id ? 'active' : ''}
-										onClick={e => this.props.selectProject(project._id)}>
+										onClick={e => selectProject(project._id)}>
 										<span title={project.projectTitle}>{ project.projectTitle }</span>
 										<span
 											className="set-favorite"
-											onClick={ e => this.props.setProjectFavorite(e, project._id, !project.favorite)}>
+											onClick={ e => setProjectFavorite(e, project._id, !project.favorite)}>
 											⭐
 										</span>
+                    <ActionBar className="set-favorite"
+                      project={project}
+                      iconVisibility={true}
+                    />
 									</li>
 								)
 

@@ -10,6 +10,7 @@ class ActionBar extends Component {
 		}
 
 		this.toggleMenuVisibility = this.toggleMenuVisibility.bind(this)
+    this.collapse = this.collapse.bind(this)
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -22,6 +23,10 @@ class ActionBar extends Component {
 		this.setState(prevState => ({ menuVisibility: !prevState.menuVisibility }))
 	}
 
+  collapse() {
+    this.setState({menuVisibility: false})
+  }
+
 	render() {
 
 		const { project, setProjectFavorite, iconVisibility } = this.props
@@ -29,7 +34,7 @@ class ActionBar extends Component {
 		const { menuVisibility } = this.state
 
 		return (
-			<div className='action-bar' onClick={() => this.toggleMenuVisibility()}>
+			<div className='action-bar' onClick={() => this.toggleMenuVisibility()} tabIndex="0" onBlur={ this.collapse }>
 				{ iconVisibility &&
 					<span className="action-bar-icon"></span>
 				}
